@@ -1,16 +1,20 @@
 {
   "files": {
-    "main.css": "/sahil-holidays/static/css/main.22ced772.css",
-    "main.js": "/sahil-holidays/static/js/main.1f098510.js",
+    "main.css": "/sahil-holidays/static/css/main.9f9cd7bb.css",
+    "main.js": "/sahil-holidays/static/js/main.5d16eb1e.js",
     "static/js/453.ee0378b0.chunk.js": "/sahil-holidays/static/js/453.ee0378b0.chunk.js",
+    "static/media/deals-icon.png": "/sahil-holidays/static/media/deals-icon.7e293e1c29ee3988e2a4.png",
+    "static/media/featured-icon.png": "/sahil-holidays/static/media/featured-icon.2d06a287f658a80728ab.png",
+    "static/media/destinations-icon.png": "/sahil-holidays/static/media/destinations-icon.a0d83cd55440d455369f.png",
+    "static/media/search-icon.png": "/sahil-holidays/static/media/search-icon.ccea4ca0290357e47484.png",
     "static/media/sahil-holidays-logo.png": "/sahil-holidays/static/media/sahil-holidays-logo.56aa8dbd8c4f5dddc9fd.png",
     "index.html": "/sahil-holidays/index.html",
-    "main.22ced772.css.map": "/sahil-holidays/static/css/main.22ced772.css.map",
-    "main.1f098510.js.map": "/sahil-holidays/static/js/main.1f098510.js.map",
+    "main.9f9cd7bb.css.map": "/sahil-holidays/static/css/main.9f9cd7bb.css.map",
+    "main.5d16eb1e.js.map": "/sahil-holidays/static/js/main.5d16eb1e.js.map",
     "453.ee0378b0.chunk.js.map": "/sahil-holidays/static/js/453.ee0378b0.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.22ced772.css",
-    "static/js/main.1f098510.js"
+    "static/css/main.9f9cd7bb.css",
+    "static/js/main.5d16eb1e.js"
   ]
 }
