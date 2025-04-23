@@ -1,11 +1,14 @@
 import './App.css';
 import HeaderLogo from './components/HeaderLogo';
+import PageBackground from './components/PageBackground';
+import Tabs from './components/Tabs';
 
 function App() {
   return (
     <div className="App">
-       <HeaderLogo />
-      
+      <PageBackground />
+      <HeaderLogo />
+      <Tabs />
     </div>
   );
 }
