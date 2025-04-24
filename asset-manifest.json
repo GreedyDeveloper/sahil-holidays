@@ -1,20 +1,33 @@
 {
   "files": {
-    "main.css": "/sahil-holidays/static/css/main.9f9cd7bb.css",
-    "main.js": "/sahil-holidays/static/js/main.5d16eb1e.js",
+    "main.css": "/sahil-holidays/static/css/main.3bd34917.css",
+    "main.js": "/sahil-holidays/static/js/main.e498ce7b.js",
     "static/js/453.ee0378b0.chunk.js": "/sahil-holidays/static/js/453.ee0378b0.chunk.js",
-    "static/media/deals-icon.png": "/sahil-holidays/static/media/deals-icon.7e293e1c29ee3988e2a4.png",
-    "static/media/featured-icon.png": "/sahil-holidays/static/media/featured-icon.2d06a287f658a80728ab.png",
-    "static/media/destinations-icon.png": "/sahil-holidays/static/media/destinations-icon.a0d83cd55440d455369f.png",
     "static/media/search-icon.png": "/sahil-holidays/static/media/search-icon.ccea4ca0290357e47484.png",
+    "static/media/destinations.avif": "/sahil-holidays/static/media/destinations.516d7880819bec7290ef.avif",
     "static/media/sahil-holidays-logo.png": "/sahil-holidays/static/media/sahil-holidays-logo.56aa8dbd8c4f5dddc9fd.png",
+    "static/media/super-deals.avif": "/sahil-holidays/static/media/super-deals.3685ed03768714d02011.avif",
+    "static/media/featured.avif": "/sahil-holidays/static/media/featured.bdc162119064ffae43d6.avif",
+    "static/media/dubai.avif": "/sahil-holidays/static/media/dubai.2d06c5616fe12aee6bbf.avif",
+    "static/media/maldives.avif": "/sahil-holidays/static/media/maldives.2507e0b98cec282cfb95.avif",
+    "static/media/bali.avif": "/sahil-holidays/static/media/bali.9e08ee363fdb23089c4f.avif",
+    "static/media/himachal.avif": "/sahil-holidays/static/media/himachal.7d63385b56815065befe.avif",
+    "static/media/singapore.avif": "/sahil-holidays/static/media/singapore.8258c667b563389f5801.avif",
+    "static/media/srilanka.avif": "/sahil-holidays/static/media/srilanka.466cfb34e989fc5af152.avif",
+    "static/media/thailand.webp": "/sahil-holidays/static/media/thailand.d0ab1627b9113056665d.webp",
+    "static/media/kerala.avif": "/sahil-holidays/static/media/kerala.019a5c7524f74006a44f.avif",
+    "static/media/kashmir.avif": "/sahil-holidays/static/media/kashmir.909f2ec6d8926865482a.avif",
+    "static/media/north-east.avif": "/sahil-holidays/static/media/north-east.24cedf04d26f8eeb3a62.avif",
+    "static/media/vietnam.avif": "/sahil-holidays/static/media/vietnam.b15e5d6d252c018d243c.avif",
+    "static/media/andaman.avif": "/sahil-holidays/static/media/andaman.aa44c569e9ad981cc526.avif",
     "index.html": "/sahil-holidays/index.html",
-    "main.9f9cd7bb.css.map": "/sahil-holidays/static/css/main.9f9cd7bb.css.map",
-    "main.5d16eb1e.js.map": "/sahil-holidays/static/js/main.5d16eb1e.js.map",
+    "static/media/default.avif": "/sahil-holidays/static/media/default.4b624029b5d39f8b537b.avif",
+    "main.3bd34917.css.map": "/sahil-holidays/static/css/main.3bd34917.css.map",
+    "main.e498ce7b.js.map": "/sahil-holidays/static/js/main.e498ce7b.js.map",
     "453.ee0378b0.chunk.js.map": "/sahil-holidays/static/js/453.ee0378b0.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9f9cd7bb.css",
-    "static/js/main.5d16eb1e.js"
+    "static/css/main.3bd34917.css",
+    "static/js/main.e498ce7b.js"
   ]
 }
