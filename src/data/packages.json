@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Kerala",
+    "image": "kerala.avif"
+  },
+  {
+    "name": "kashmir",
+    "image": "kashmir.avif"
+  },
+  {
+    "name": "Himachal",
+    "image": "himachal.avif"
+  },
+  {
+    "name": "North East",
+    "image": "north-east.avif"
+  },
+  {
+    "name": "Thailand",
+    "image": "thailand.webp"
+  },
+  {
+    "name": "Andaman",
+    "image": "andaman.avif"
+  },
+  {
+    "name": "Srilanka",
+    "image": "srilanka.avif"
+  },
+  {
+    "name": "Vietnam",
+    "image": "vietnam.avif"
+  },
+  {
+    "name": "Maldives",
+    "image": "maldives.avif"
+  },
+  {
+    "name": "Singapore",
+    "image": "singapore.avif"
+  },
+  {
+    "name": "Dubai",
+    "image": "dubai.avif"
+  },
+  {
+    "name": "Bali",
+    "image": "bali.avif"
+  }
+]

@@ -53,7 +53,10 @@
 }
 
 .icon {
-  width: 24px;
+  border-radius: 50%;
+  flex-shrink: 0;
   height: 24px;
   margin-right: 10px;
+  overflow: hidden;
+  width: 24px;
 }

@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import searchIcon from '../assets/search-icon.png';
-import destinationsIcon from '../assets/destinations-icon.png';
-import dealsIcon from '../assets/deals-icon.png';
-import featuredIcon from '../assets/featured-icon.png'
+import destinationsIcon from '../assets/destinations.avif';
+import dealsIcon from '../assets/super-deals.avif';
+import featuredIcon from '../assets/featured.avif'
 import styles from './Tabs.module.css';
 
 const Tabs = () => {
