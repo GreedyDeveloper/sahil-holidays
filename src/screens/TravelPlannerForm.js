@@ -30,7 +30,7 @@ import HotelIcon from '@mui/icons-material/Hotel';
 import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
 import PlannerAutocomplete from 'components/PlannerAutocomplete';
 import ImageDropzone from 'components/ImageDropzone';
-import { addItem, updateItem, uploadImage } from 'services/Api';
+import { addItem, uploadImage } from 'services/Api';
 
 
 const validationSchema = Yup.object({

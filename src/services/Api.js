@@ -17,9 +17,6 @@ export const addItem = async (newItem) => {
   try {
     const response = await fetch(`${BASE_URL}/create_package.php`, {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
       body: JSON.stringify(newItem),
     });
     if (!response.ok) {
