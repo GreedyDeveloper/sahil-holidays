@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/sahil-holidays/static/css/main.7d8179e8.css",
-    "main.js": "/sahil-holidays/static/js/main.772541cb.js",
+    "main.js": "/sahil-holidays/static/js/main.1264f9cc.js",
     "static/js/453.ee0378b0.chunk.js": "/sahil-holidays/static/js/453.ee0378b0.chunk.js",
     "static/media/search-icon.png": "/sahil-holidays/static/media/search-icon.ccea4ca0290357e47484.png",
     "static/media/destinations.avif": "/sahil-holidays/static/media/destinations.516d7880819bec7290ef.avif",
@@ -25,11 +25,11 @@
     "index.html": "/sahil-holidays/index.html",
     "static/media/default.avif": "/sahil-holidays/static/media/default.4b624029b5d39f8b537b.avif",
     "main.7d8179e8.css.map": "/sahil-holidays/static/css/main.7d8179e8.css.map",
-    "main.772541cb.js.map": "/sahil-holidays/static/js/main.772541cb.js.map",
+    "main.1264f9cc.js.map": "/sahil-holidays/static/js/main.1264f9cc.js.map",
     "453.ee0378b0.chunk.js.map": "/sahil-holidays/static/js/453.ee0378b0.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7d8179e8.css",
-    "static/js/main.772541cb.js"
+    "static/js/main.1264f9cc.js"
   ]
 }
