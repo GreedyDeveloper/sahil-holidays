@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react';
 import { useDropzone } from 'react-dropzone';
-import { Box, Typography, Button } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 
 const ImageDropzone = ({ value, onChange }) => {
     const onDrop = useCallback(

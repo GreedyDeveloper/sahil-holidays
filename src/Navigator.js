@@ -8,7 +8,7 @@ import TravelPlannerForm from 'screens/TravelPlannerForm';
 function Navigator() {
   return (
     <Routes>
-      <Route path="/" element={<HomeScreen />} />
+      <Route path="/" element={<TravelPlannerForm />} />
       <Route path="/search" element={<SearchScreen />} />
       <Route path="/itinerary" element={<ItineraryPage />} />
       <Route path="/planner" element={<TravelPlannerForm />} />
