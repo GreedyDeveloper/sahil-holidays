@@ -1,6 +1,8 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 import {device} from 'styles/breakpoints';
+import {theme} from 'styles/theme';
+
 
 const SearchBarContainer = styled.div`
   background-color: #fff;
@@ -15,7 +17,7 @@ const Row = styled.div`
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  border: 1px solid ${({theme}) => theme.colors.border};
+  border: 1px solid ${theme.colors.border};
   border-radius: 10px;
 `;
 
@@ -27,7 +29,7 @@ const Column = styled.div`
   justify-content: start;
   padding: 10px 20px;
   cursor: pointer;
-  border-right: 1px solid ${({theme}) => theme.colors.border};
+  border-right: 1px solid ${theme.colors.border};
 
   &:last-child {
     border-right: none;
@@ -37,32 +39,32 @@ const Column = styled.div`
     flex: none;
     width: 100%;
     border-right: none;
-    border-bottom: 1px solid ${({theme}) => theme.colors.border}
+    border-bottom: 1px solid ${theme.colors.border}
   }
 `;
 
 const Label = styled.div`
-  font-size: ${({theme}) => theme.fontSizes.sm};
+  font-size: ${theme.fontSizes.sm};
   margin-bottom: 5px;
-  font-weight: ${({theme}) => theme.fontWeights.regular};
+  font-weight: ${theme.fontWeights.regular};
 `;
 
 const Value = styled.div`
-  font-size: ${({theme}) => theme.fontSizes.xxl};
-  font-weight: ${({theme}) => theme.fontWeights.heavy};
+  font-size: ${theme.fontSizes.xxl};
+  font-weight: ${theme.fontWeights.heavy};
   color: #000;
 `;
 
 const SubText = styled.div`
-  font-size: ${({theme}) => theme.fontSizes.sm};
-  font-weight: ${({theme}) => theme.fontWeights.regular};
+  font-size: ${theme.fontSizes.sm};
+  font-weight: ${theme.fontWeights.regular};
 `;
 
 const SearchButton = styled.button`
   background: linear-gradient(93deg, #FF6D38, #FF6D38);
   color: #fff;
-  font-size: ${({theme}) => theme.fontSizes.xl};
-  font-weight: ${({theme}) => theme.fontWeights.heavy};
+  font-size: ${theme.fontSizes.xl};
+  font-weight: ${theme.fontWeights.heavy};
   border: none;
   border-radius: 30px;
   cursor: pointer;

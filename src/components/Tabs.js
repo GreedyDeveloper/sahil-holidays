@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 import searchIcon from '../assets/search-icon.png';
 import destinationsIcon from '../assets/destinations.avif';
 import dealsIcon from '../assets/super-deals.avif';

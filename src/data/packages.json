@@ -1,7 +1,8 @@
 [
   {
     "name": "Kerala",
-    "image": "kerala.avif"
+    "image": "kerala.avif",
+    "banner": "kerala-banner-image.avif"
   },
   {
     "name": "kashmir",
@@ -46,5 +47,179 @@
   {
     "name": "Bali",
     "image": "bali.avif"
-  }
+  },
+  {
+    "packageName": "Himachal Harmony from Chandigarh (by Car)",
+    "duration": "6 Nights/7 Days",
+    "route": ["Chandigarh", "Shimla (2N)", "Manali (3N)", "Chandigarh (1N)"],
+    "numberOfTravellers": 2,
+    "startLocation": "Chandigarh",
+    "endLocation": "Chandigarh",
+    "transport": "Car (Sedan)",
+    "hotels": {
+      "Manali": "Whitestone Resort",
+      "Shimla": "Shimla Havens",
+      "Chandigarh": "Velvet Clarks Exotica / Almeida"
+    },
+    "mealPlan": "MAP (Breakfast & Dinner)",
+    "inclusions": [
+      "Pickup & drop from Chandigarh",
+      "6 nights stay (double/triple occupancy)",
+      "Daily breakfast & dinner",
+      "Sightseeing and transfers by AC vehicle (non-AC in hills)",
+      "Transfer taxes, parking, fuel, and driver charges",
+      "NGT terms and conditions"
+    ],
+    "exclusions": [
+      "Flights, Trains, Ferries",
+      "Monument & Camera Fees",
+      "Personal Expenses",
+      "Adventure Activities",
+      "Extra services (Permits, Volvo Luggage, Heater, Extra Meals)",
+      "5% GST",
+      "Winter 4x4 Jeep Charges (if needed)"
+    ],
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "Chandigarh – Shimla",
+        "activities": [
+          "Vice Regal Lodge & Botanical Gardens",
+          "Mall, Scandal Point, Ridge, Gaiety Theatre",
+          "Heritage Museum, Lakkar Bazaar, Rani Jhansi Park, Christ Church"
+        ]
+      },
+      {
+        "day": 2,
+        "title": "Shimla – Kufri – Shimla",
+        "activities": [
+          "Himalayan Wildlife Zoo",
+          "Kufri Fun Park",
+          "Adventure Activities"
+        ]
+      },
+      {
+        "day": 3,
+        "title": "Shimla – Kullu – Manali",
+        "activities": ["Pandoh Dam (enroute)"]
+      },
+      {
+        "day": 4,
+        "title": "Manali Local Sightseeing",
+        "activities": [
+          "Old Manali, Clubhouse, Local Market",
+          "Tibetan Monastery, IBEX Market, Mall Road"
+        ]
+      },
+      {
+        "day": 5,
+        "title": "Solang Valley",
+        "activities": [
+          "Adventure Activities: Paragliding, Zorbing, ATV Rides, etc.",
+          "Optional: 4x4 Jeep (extra cost in snow conditions)"
+        ]
+      },
+      {
+        "day": 6,
+        "title": "Manali – Chandigarh",
+        "activities": [
+          "Devlok Cultural Theme Park",
+          "White Water River Rafting",
+          "Paragliding in Kullu"
+        ]
+      },
+      {
+        "day": 7,
+        "title": "Chandigarh Drop",
+        "activities": ["Rock Garden", "Sukhna Lake"]
+      }
+    ]
+  },
+  {
+    "packageName": "Shimla Manali Package from Delhi By Volvo",
+    "duration": "5 Nights/6 Days",
+    "route": ["Delhi (Overnight)", "Manali (3N)", "Shimla (2N)", "Delhi"],
+    "numberOfTravellers": 2,
+    "startLocation": "Delhi",
+    "endLocation": "Delhi",
+    "transport": "Volvo + AC Vehicle (non-AC in hills)",
+    "hotels": {
+      "Manali": "Hotel Niyati Cottage or Similar",
+      "Shimla": "Lords Villa / Swastik Inn / Arowana Woods / Green Park"
+    },
+    "mealPlan": "MAP (Breakfast & Dinner)",
+    "inclusions": [
+      "Pickup & drop from Chandigarh",
+      "5 nights stay (double occupancy)",
+      "Daily breakfast & dinner",
+      "Sightseeing and transfers by AC vehicle",
+      "Transfer taxes, parking, fuel, and driver charges",
+      "NGT terms and conditions"
+    ],
+    "exclusions": [
+      "Flights, Trains, Ferries",
+      "Monument & Camera Fees",
+      "Personal Expenses",
+      "Adventure Activities",
+      "Extra services (Permits, Volvo Luggage, Heater, Extra Meals)",
+      "5% GST"
+    ],
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "Delhi – Manali (Overnight)",
+        "activities": ["Overnight Volvo journey to Manali"]
+      },
+      {
+        "day": 2,
+        "title": "Arrival in Manali + Local City Tour",
+        "activities": [
+          "Hadimba Temple, Ghatotkacha Temple",
+          "Club House, Tibetan Monastery",
+          "Vashisht Hot Springs",
+          "Mall Road"
+        ]
+      },
+      {
+        "day": 3,
+        "title": "Manali – Solang Valley or Rohtang or Atal Tunnel",
+        "activities": [
+          "Adventure Activities at Solang Valley",
+          "Optional: Visit Atal Tunnel (extra cost)"
+        ]
+      },
+      {
+        "day": 4,
+        "title": "Kullu – Naggar Day Trip",
+        "activities": [
+          "Devlok Cultural Park, Pashmina Shawl Showroom",
+          "White Water Rafting, Paragliding",
+          "Naggar Castle, Roerich Art Gallery (closed Mondays)",
+          "Tripura Sundari Temple, Trout Fish Farm"
+        ]
+      },
+      {
+        "day": 5,
+        "title": "Manali – Shimla",
+        "activities": [
+          "Vaishno Devi Temple (Kullu)",
+          "Pandoh Dam"
+        ]
+      },
+      {
+        "day": 6,
+        "title": "Kufri + Shimla Local",
+        "activities": [
+          "Kufri: Himalayan Wildlife Zoo, Snow Kingdom, Fun Park",
+          "Shimla: Scandal Point, Ridge, Gaiety Theatre, Heritage Museum",
+          "Lakkar Bazaar, Rani Jhansi Park, Christ Church"
+        ]
+      },
+      {
+        "day": 7,
+        "title": "Shimla – Delhi Departure",
+        "activities": ["Volvo journey back to Delhi"]
+      }
+    ]
+  }    
 ]

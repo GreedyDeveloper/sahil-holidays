@@ -1,6 +1,7 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 import {device} from 'styles/breakpoints';
+import {theme} from 'styles/theme';
 
 const getImage = (imageName) => {
   try {
@@ -56,16 +57,16 @@ const TitleWrapper = styled.div`
 `;
 
 const Title = styled.p`
-  font-size: ${({theme}) => theme.fontSizes.xs};
-  color: ${({theme}) => theme.colors.white};
-  font-weight: ${({theme}) => theme.fontWeights.heavy};
+  font-size: ${theme.fontSizes.xs};
+  color: ${theme.colors.white};
+  font-weight: ${theme.fontWeights.heavy};
   padding: 10px 15px;
   margin: 0;
 
   @media ${device.mobile} {
-    font-size: ${({theme}) => theme.fontSizes.md};
-    color: ${({theme}) => theme.colors.black};
-    font-weight: ${({theme}) => theme.fontWeights.bold};
+    font-size: ${theme.fontSizes.md};
+    color: ${theme.colors.black};
+    font-weight: ${theme.fontWeights.bold};
     padding: 0;
   }
 `;
