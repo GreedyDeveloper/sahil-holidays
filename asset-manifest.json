@@ -1,13 +1,15 @@
 {
   "files": {
-    "main.css": "/sahil-holidays/static/css/main.4a2e79a3.css",
-    "main.js": "/sahil-holidays/static/js/main.e6bb6e57.js",
+    "main.css": "/sahil-holidays/static/css/main.7d8179e8.css",
+    "main.js": "/sahil-holidays/static/js/main.6567e1fb.js",
     "static/js/453.ee0378b0.chunk.js": "/sahil-holidays/static/js/453.ee0378b0.chunk.js",
     "static/media/search-icon.png": "/sahil-holidays/static/media/search-icon.ccea4ca0290357e47484.png",
     "static/media/destinations.avif": "/sahil-holidays/static/media/destinations.516d7880819bec7290ef.avif",
+    "static/media/kerala-banner-image.avif": "/sahil-holidays/static/media/kerala-banner-image.8c4e931257442a9be008.avif",
     "static/media/sahil-holidays-logo.png": "/sahil-holidays/static/media/sahil-holidays-logo.56aa8dbd8c4f5dddc9fd.png",
     "static/media/super-deals.avif": "/sahil-holidays/static/media/super-deals.3685ed03768714d02011.avif",
     "static/media/featured.avif": "/sahil-holidays/static/media/featured.bdc162119064ffae43d6.avif",
+    "static/media/periyar-elephant.avif": "/sahil-holidays/static/media/periyar-elephant.10bade2894254d3c626a.avif",
     "static/media/dubai.avif": "/sahil-holidays/static/media/dubai.2d06c5616fe12aee6bbf.avif",
     "static/media/maldives.avif": "/sahil-holidays/static/media/maldives.2507e0b98cec282cfb95.avif",
     "static/media/bali.avif": "/sahil-holidays/static/media/bali.9e08ee363fdb23089c4f.avif",
@@ -22,12 +24,12 @@
     "static/media/andaman.avif": "/sahil-holidays/static/media/andaman.aa44c569e9ad981cc526.avif",
     "index.html": "/sahil-holidays/index.html",
     "static/media/default.avif": "/sahil-holidays/static/media/default.4b624029b5d39f8b537b.avif",
-    "main.4a2e79a3.css.map": "/sahil-holidays/static/css/main.4a2e79a3.css.map",
-    "main.e6bb6e57.js.map": "/sahil-holidays/static/js/main.e6bb6e57.js.map",
+    "main.7d8179e8.css.map": "/sahil-holidays/static/css/main.7d8179e8.css.map",
+    "main.6567e1fb.js.map": "/sahil-holidays/static/js/main.6567e1fb.js.map",
     "453.ee0378b0.chunk.js.map": "/sahil-holidays/static/js/453.ee0378b0.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4a2e79a3.css",
-    "static/js/main.e6bb6e57.js"
+    "static/css/main.7d8179e8.css",
+    "static/js/main.6567e1fb.js"
   ]
 }
