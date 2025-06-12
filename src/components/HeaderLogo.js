@@ -1,6 +1,6 @@
 import React from 'react';
 import './HeaderLogo.css';
-import logo from 'assets/sahil-holidays-logo.png';
+import logo from 'assets/logo.png';
 
 const HeaderLogo = () => {
   return (
