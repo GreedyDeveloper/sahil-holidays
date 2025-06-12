@@ -6,16 +6,28 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { muiTheme } from 'styles/theme';
 import Navigator from './Navigator';
 import { fetchData } from 'services/Api';
+import { useNavigate } from 'react-router-dom';
 
 export const DataContext = createContext(null);
 
 function App() {
+  const navigate = useNavigate();
 
   const [data, setData] = useState({
     packages: [],
     destinations: [],
     cities: [],
   });
+
+
+  useEffect(() => {
+    const redirectPath = sessionStorage.redirect;
+    if (redirectPath) {
+      sessionStorage.removeItem('redirect');
+      navigate(redirectPath, { replace: true });
+    }
+  }, [navigate]);
+
 
   useEffect(() => {
     fetchData().then((packages) => {
