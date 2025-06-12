@@ -1,9 +1,10 @@
 {
   "files": {
-    "main.css": "/sahil-holidays/static/css/main.7d8179e8.css",
-    "main.js": "/sahil-holidays/static/js/main.1264f9cc.js",
+    "main.css": "/sahil-holidays/static/css/main.3a6421ea.css",
+    "main.js": "/sahil-holidays/static/js/main.0ddfc55d.js",
     "static/js/453.ee0378b0.chunk.js": "/sahil-holidays/static/js/453.ee0378b0.chunk.js",
     "static/media/search-icon.png": "/sahil-holidays/static/media/search-icon.ccea4ca0290357e47484.png",
+    "static/media/logo.png": "/sahil-holidays/static/media/logo.d9714e24d47ae8b0a31f.png",
     "static/media/destinations.avif": "/sahil-holidays/static/media/destinations.516d7880819bec7290ef.avif",
     "static/media/kerala-banner-image.avif": "/sahil-holidays/static/media/kerala-banner-image.8c4e931257442a9be008.avif",
     "static/media/sahil-holidays-logo.png": "/sahil-holidays/static/media/sahil-holidays-logo.56aa8dbd8c4f5dddc9fd.png",
@@ -24,12 +25,12 @@
     "static/media/andaman.avif": "/sahil-holidays/static/media/andaman.aa44c569e9ad981cc526.avif",
     "index.html": "/sahil-holidays/index.html",
     "static/media/default.avif": "/sahil-holidays/static/media/default.4b624029b5d39f8b537b.avif",
-    "main.7d8179e8.css.map": "/sahil-holidays/static/css/main.7d8179e8.css.map",
-    "main.1264f9cc.js.map": "/sahil-holidays/static/js/main.1264f9cc.js.map",
+    "main.3a6421ea.css.map": "/sahil-holidays/static/css/main.3a6421ea.css.map",
+    "main.0ddfc55d.js.map": "/sahil-holidays/static/js/main.0ddfc55d.js.map",
     "453.ee0378b0.chunk.js.map": "/sahil-holidays/static/js/453.ee0378b0.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7d8179e8.css",
-    "static/js/main.1264f9cc.js"
+    "static/css/main.3a6421ea.css",
+    "static/js/main.0ddfc55d.js"
   ]
 }
