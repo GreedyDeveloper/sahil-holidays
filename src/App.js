@@ -21,15 +21,6 @@ function App() {
 
 
   useEffect(() => {
-    const redirectPath = sessionStorage.redirect;
-    if (redirectPath) {
-      sessionStorage.removeItem('redirect');
-      navigate(redirectPath, { replace: true });
-    }
-  }, [navigate]);
-
-
-  useEffect(() => {
     fetchData().then((packages) => {
       const destinationNames = new Set();
       const cities = new Set();
