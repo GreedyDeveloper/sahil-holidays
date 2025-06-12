@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta http-equiv="refresh" content="0; url=/sahil-holidays" />
+    <meta charset="UTF-8" />
+    <script>
+      // Store original path and redirect to root
+      sessionStorage.redirect = location.pathname + location.search + location.hash;
+      location.replace("/sahil-holidays/");
+    </script>
   </head>
   <body></body>
 </html>
