@@ -71,10 +71,11 @@ const Title = styled.p`
   }
 `;
 
-const Package = ({title, picture}) => {
+const Package = ({title, picture, onClick}) => {
   return (
-    <Container>
-      <Image src={getImage(picture)} alt={title} />
+    <Container onClick={onClick}>
+      {/* Fallback to default image if picture is not provided */}
+      <Image src={picture} alt={title} />
       <TitleWrapper>
         <Title>{title}</Title>
       </TitleWrapper>

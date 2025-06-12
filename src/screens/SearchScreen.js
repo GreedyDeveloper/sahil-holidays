@@ -1,8 +1,13 @@
 import PackageCard from 'components/PackageCard';
 import SearchBarComponent from 'components/SearchBar';
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import styled from '@emotion/styled';
 import { theme } from 'styles/theme';
+import Card from 'components/Card';
+import { DataContext } from 'App';
+import Package from 'components/Package';
+import { Box } from '@mui/material';
+import moment from 'moment';
 
 const Container = styled.div``;
 
@@ -75,19 +80,84 @@ const Description = styled.p`
 
 function SearchScreen() {
 
+  const { destinations, packages: packageData } = useContext(DataContext);
+  const [searchParams, setSearchParams] = useState({
+    departureCity: '',
+    departureDate: null,
+    destination: ''
+  });
+
+  const [packages, setPackages] = React.useState(null);
+
+  const handleSearch = (params = searchParams) => {
+    const filteredPackages = packageData.filter(pkg =>
+      pkg.destination.toLowerCase().includes(params.destination.toLowerCase())
+    ).filter(pkg => {
+      if (params.departureDate) {
+        return pkg.duration.days >= params.departureDate.diff(moment(), 'days');
+      }
+      return false;
+    }).filter(pkg => {
+      if (params.departureCity && params.departureCity !== '') {
+        return pkg.cities.some(city => city.toLowerCase() === params.departureCity.toLowerCase());
+      }
+      return false;
+    });
+    setPackages(filteredPackages);
+  }
+
+  const handleReset = () => {
+    setSearchParams({
+      departureCity: '',
+      departureDate: null,
+      destination: ''
+    });
+    setPackages(null);
+  }
+
+  const handleDestinationPress = (destination) => {
+    setSearchParams({
+      departureCity: 'Chennai',
+      departureDate: moment(),
+      destination: destination.name
+    });
+    handleSearch({
+      departureCity: 'Chennai',
+      departureDate: moment(),
+      destination: destination.name
+    });
+  }
+
   return (
     <Container>
-      <SearchBarComponent />
-      <BannerContainer>
-        <Banner background={require("../assets/kerala-banner-image.avif")} />
-        <BannerContent>
-          <ContentWrapper>
-            <Title>Kerala Packages</Title>
-            <Description>Plan Your Sojourn to God's Own Country</Description>
-          </ContentWrapper>
-        </BannerContent>
-      </BannerContainer>
-      <PackageCard />
+      <SearchBarComponent searchParams={searchParams} setParams={setSearchParams} onSearch={() => handleSearch()} onReset={handleReset} />
+      {!packages ? <Card title={"Top Holiday Packages"} description={"Book now to grab best offers!"}>
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'row',
+            gap: 10,
+            width: '100%',
+            overflowX: 'auto',
+            marginTop: 20,
+            msOverflowStyle: 'none',
+            scrollbarWidth: 'none',
+            scrollBehavior: 'smooth',
+          }}
+        >
+          {destinations.map((p) => (
+            <Package key={p.name} title={p.name} picture={p.image} onClick={() => handleDestinationPress(p)} />
+          ))}
+        </div>
+      </Card> : <Box sx={{ display: 'flex', flexDirection:'column', justifyContent: 'center', margin: '0 auto', marginTop: 2, width: '70%' }}>
+        {packages.map((pkg) => (
+          <PackageCard
+            key={pkg.packageName}
+            packageData={pkg}
+          />
+        ))}
+      </Box>}
+
     </Container >
   );
 }
