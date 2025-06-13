@@ -127,12 +127,11 @@ const TravelPackageCard = ({ packageData }) => {
             </Typography>
             <Grid container spacing={1}>
                 {sights.map((sight, index) => (
-                    <Grid item xs={6} sm={3} md={3} key={index}>
+                    <Grid key={index}>
                         <GradientChip
                             icon={<Place sx={{ color: 'goldenrod' }} />}
                             label={sight}
                             color="black"
-                            fullWidth
                         />
                     </Grid>
                 ))}
