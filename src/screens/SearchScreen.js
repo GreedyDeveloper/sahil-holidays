@@ -1,95 +1,61 @@
+import React, { useContext, useState } from 'react';
+import { Box, Typography, Container, Grid, Card, CardMedia, CardContent } from '@mui/material';
+import SearchBar from 'components/SearchBar'; // Assuming you have the fancy version
+import logo from 'assets/logo.png';
+import backgroundImage from 'assets/background.jpg';
 import PackageCard from 'components/PackageCard';
 import SearchBarComponent from 'components/SearchBar';
-import React, { useContext, useState } from 'react';
 import styled from '@emotion/styled';
 import { theme } from 'styles/theme';
-import Card from 'components/Card';
 import { DataContext } from 'App';
 import Package from 'components/Package';
-import { Box } from '@mui/material';
 import moment from 'moment';
 
-const Container = styled.div``;
+export const DestinationCard = styled(Card)(({ theme }) => ({
+  borderRadius: 12,
+  overflow: 'hidden',
+  position: 'relative',
+  width: 250,
+  transition: 'transform 0.3s ease',
+  flex: '0 0 auto',
+  scrollSnapAlign: 'start',
+  '&:hover': {
+    transform: 'scale(1.03)',
+  },
+}));
 
-const BannerContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  position: relative;
-`;
+export const Image = styled(CardMedia)({
+  height: 200,
+});
 
-const Banner = styled.div`
-  background-image: ${(props) => `url(${props.background})`};
-  background-position: center;
-  display: inline-block;
-  background-size: cover;
-  width: 100%;
-  height: 256px;
-  position: relative;
-  z-index: 1;
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-  -webkit-font-smoothing: antialiased;
+export const Overlay = styled(Box)(({ theme }) => ({
+  position: 'absolute',
+  bottom: 0,
+  left: 0,
+  width: '100%',
+  background: 'linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent)',
+  color: '#fff',
+  padding: theme.spacing(2),
+}));
 
-  &::before {
-    content: "";
-    position: absolute;
-    width: 50%;
-    height: 100%;
-    background: linear-gradient(270.47deg, rgba(0, 0, 0, 0) 3.65%, #000000 95.61%);
-    opacity: .8;
-    left: 0;
-    transition: ease all .2s;
-  }
-`;
+export const Title = styled(Typography)(({ theme }) => ({
+  fontWeight: 600,
+  fontSize: '1.1rem',
+}));
 
-const BannerContent = styled.div`
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  z-index: 2;
-`;
-
-const ContentWrapper = styled.h1`
-  width: 1200px;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  margin: 0 auto;
-`;
-
-const Title = styled.h1`
-  font-size: ${theme.fontSizes.xxl};
-  line-height: 27px;
-  font-weight: ${theme.fontWeights.bold};
-  margin-bottom: 10px;
-  font-family: 'Quicksand', sans-serif;
-  color: ${theme.colors.white};
-`;
-
-const Description = styled.p`
-  font-size: 16px;
-  margin: 0;
-  padding: 0;
-  font-family: 'Quicksand', sans-serif;
-  color: ${theme.colors.white};
-  font-weight: ${theme.fontWeights.light};
-`;
-
-function SearchScreen() {
-
+const TravelHomePage = () => {
   const { destinations, packages: packageData } = useContext(DataContext);
   const [searchParams, setSearchParams] = useState({
     departureCity: '',
     departureDate: null,
-    destination: ''
+    destination: '',
   });
 
   const [packages, setPackages] = React.useState(null);
 
   const handleSearch = (params = searchParams) => {
+    console.log('Search Params:', params);
+
     const filteredPackages = packageData.filter(pkg =>
       pkg.destination.toLowerCase().includes(params.destination.toLowerCase())
     ).filter(pkg => {
@@ -104,17 +70,12 @@ function SearchScreen() {
       return false;
     });
     setPackages(filteredPackages);
-  }
+  };
 
   const handleReset = () => {
-    setSearchParams({
-      departureCity: '',
-      departureDate: null,
-      destination: ''
-    });
+    setSearchParams({ departureCity: '', departureDate: null, destination: '' });
     setPackages(null);
-  }
-
+  };
   const handleDestinationPress = (destination) => {
     setSearchParams({
       departureCity: 'Chennai',
@@ -129,37 +90,101 @@ function SearchScreen() {
   }
 
   return (
-    <Container>
-      <SearchBarComponent searchParams={searchParams} setParams={setSearchParams} onSearch={() => handleSearch()} onReset={handleReset} />
-      {!packages ? <Card title={"Top Holiday Packages"} description={"Book now to grab best offers!"}>
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'row',
-            gap: 10,
+    <Box>
+      {/* Hero Section */}
+      <Box
+        sx={{
+          backgroundImage: `url(${backgroundImage})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          padding: '125px 20px',
+          textAlign: 'center',
+          color: '#fff',
+          position: 'relative',
+          zIndex: 1,
+          '&::before': {
+            content: '""',
+            position: 'absolute',
+            top: 0,
+            left: 0,
             width: '100%',
-            overflowX: 'auto',
-            marginTop: 20,
-            msOverflowStyle: 'none',
-            scrollbarWidth: 'none',
-            scrollBehavior: 'smooth',
-          }}
-        >
-          {destinations.map((p) => (
-            <Package key={p.name} title={p.name} picture={p.image} onClick={() => handleDestinationPress(p)} />
-          ))}
-        </div>
-      </Card> : <Box sx={{ display: 'flex', flexDirection:'column', justifyContent: 'center', margin: '0 auto', marginTop: 2, width: '70%' }}>
+            height: '100%',
+            background:
+              'linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6))',
+            zIndex: -1,
+          },
+        }}
+      >
+        <Typography variant="h3" fontWeight={700}>
+          Discover Your Dream Destination
+        </Typography>
+        <Typography variant="h6" mb={4}>
+          Best travel packages, handpicked with love ❤️
+        </Typography>
+        <Container maxWidth="md">
+          <SearchBar
+            searchParams={searchParams}
+            setParams={setSearchParams}
+            onSearch={() => handleSearch()}
+            onReset={handleReset}
+          />
+        </Container>
+      </Box>
+
+      {packages ? <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', margin: '0 auto', marginTop: 2, width: '70%' }}>
         {packages.map((pkg) => (
           <PackageCard
             key={pkg.packageName}
             packageData={pkg}
           />
         ))}
-      </Box>}
+      </Box> : null}
 
-    </Container >
+      {/* Popular Destinations */}
+      <Container sx={{ py: 6 }}>
+        <Typography variant="h4" fontWeight={600} textAlign="center" color='#003366' gutterBottom>
+          Popular Destinations
+        </Typography>
+
+        <Box
+          sx={{
+            display: 'flex',
+            overflowX: 'auto',
+            scrollSnapType: 'x mandatory',
+            gap: 3,
+            py: 2,
+            px: 1,
+            '&::-webkit-scrollbar': {
+              display: 'none',
+            },
+          }}
+        >
+          {destinations.map((dest, index) => (
+            <DestinationCard key={index} onClick={() => handleDestinationPress(dest)}>
+              <Image component="img" image={dest.image} alt={dest.name} />
+              <Overlay>
+                <Title>{dest.name}</Title>
+              </Overlay>
+            </DestinationCard>
+          ))}
+        </Box>
+      </Container>
+
+      {/* Footer */}
+      <Box
+        sx={{
+          backgroundColor: '#f4f4f4',
+          textAlign: 'center',
+          py: 3,
+          mt: 1,
+          fontSize: '0.9rem',
+          color: '#555',
+        }}
+      >
+        © {new Date().getFullYear()} Sahil Holidays. All rights reserved.
+      </Box>
+    </Box>
   );
-}
+};
 
-export default SearchScreen;
+export default TravelHomePage;

@@ -162,8 +162,8 @@ const TravelPackageCard = ({ packageData }) => {
             </Typography>
             <Stack direction="column" spacing={4} justifyContent="center">
                 <Box sx={{ textAlign: 'center' }}>
-                    <Tooltip title="Call Now On +91 89041 33141">
-                        <a href="tel:+918904133141" style={{ textDecoration: 'none' }}>
+                    <Tooltip title="Call Now On +91 98404 91037">
+                        <a href="tel:+919840491037" style={{ textDecoration: 'none' }}>
                             <IconButton
                                 sx={{
                                     backgroundColor: 'primary.light',
@@ -186,7 +186,7 @@ const TravelPackageCard = ({ packageData }) => {
                 <Box sx={{ textAlign: 'center' }}>
                     <Tooltip title="Chat on WhatsApp">
                         <a
-                            href="https://wa.me/918904133141"
+                            href="https://wa.me/917200492107"
                             target="_blank"
                             rel="noopener noreferrer"
                             style={{ textDecoration: 'none' }}
