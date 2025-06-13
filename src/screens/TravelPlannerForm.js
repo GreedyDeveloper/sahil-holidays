@@ -107,7 +107,6 @@ const initialValues = {
   validity: { startDate: null, endDate: null },
   image: null,
   price: '',
-  priceDescription: '',
   cities: [],
   sights: [],
   highlights: [],
@@ -280,15 +279,6 @@ const TravelPackageForm = () => {
                         <InputAdornment position="start">₹</InputAdornment>
                       ),
                     }}
-                  />
-
-                  <TextField
-                    name="priceDescription"
-                    label="Price Description"
-                    value={values.priceDescription}
-                    inputProps={{ maxLength: 200 }}
-                    onChange={handleChange}
-                    fullWidth
                   />
 
                   <Box display="flex" alignItems="center" gap={2}>
