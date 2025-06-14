@@ -84,10 +84,10 @@ const TravelPackageCard = ({ packageData }) => {
                         key={index}
                         sx={{
                             display: 'flex',
-                            flexDirection: 'column',
-                            alignItems: 'center',
+                            flexDirection: { xs: 'row', md: 'column' },
+                            alignItems: { xs: 'flex-start', md: 'center' },
                             textAlign: 'center',
-                            width: isCompact ? 150 : '25%',
+                            width: { xs: '50%', md: isCompact ? 150 : '25%' },
                             p: 1,
                         }}
                     >
@@ -97,7 +97,7 @@ const TravelPackageCard = ({ packageData }) => {
                         {highlight.iconType === 'flight' && <FlightTakeoff color="primary" />}
                         {highlight.iconType === 'hotel' && <KingBed color="primary" />}
                         {highlight.iconType === 'transfer' && <LocalTaxi color="primary" />}
-                        <Typography fontSize={14} fontWeight="bold" mt={0.5}>
+                        <Typography fontSize={14} fontWeight="bold" mt={{ xs: 0, md: 0.5 }} ml={{ xs: 1, md: 0 }} textAlign={{ xs: 'left', md: 'center' }}>
                             {highlight.text}
                         </Typography>
                     </Box>
