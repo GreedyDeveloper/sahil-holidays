@@ -113,18 +113,22 @@ const TravelHomePage = () => {
           },
         }}
       >
-        <Typography variant='h3' fontWeight={700} sx={{ fontSize: { xs: '2.5rem', sm: '3rem' } }}>
+        {!!!packages?.length && <><Typography variant='h3' fontWeight={700} sx={{ fontSize: { xs: '2.5rem', sm: '3rem' } }}>
           Discover Your Dream Destination
         </Typography>
-        <Typography variant="h6" mb={4}>
-          Best travel packages, handpicked with love ❤️
-        </Typography>
-        <Container maxWidth="md">
+          <Typography variant="h6" mb={4}>
+            Best travel packages, handpicked with love ❤️
+          </Typography></>}
+        <Container
+          sx={{ width: !!packages?.length ? '100%' : 'auto' }}
+          maxWidth={!!packages?.length ? false : 'md'}
+        >
           <SearchBar
             searchParams={searchParams}
             setParams={setSearchParams}
             onSearch={() => handleSearch()}
             onReset={handleReset}
+            displayCompactLayout={packages && packages.length > 0}
           />
         </Container>
       </Box>

@@ -4,7 +4,7 @@ import { AdapterMoment } from '@mui/x-date-pickers/AdapterMoment';
 import { useContext } from 'react';
 import { DataContext } from 'App';
 
-const SearchBar = ({ searchParams, setParams, onSearch, onReset }) => {
+const SearchBar = ({ searchParams, setParams, displayCompactLayout, onSearch, onReset }) => {
   const { cities, destinations } = useContext(DataContext);
   const destinationsOptions = destinations.map(dest => dest.name);
 
@@ -17,9 +17,9 @@ const SearchBar = ({ searchParams, setParams, onSearch, onReset }) => {
 
   return (
     <Box sx={{ padding: 4, backgroundColor: 'white', borderRadius: 2, boxShadow: 2 }}>
-      <Typography variant="h5" textAlign="center" fontWeight={600} color='#003366'>
+      {!displayCompactLayout && <Typography variant="h5" textAlign="center" fontWeight={600} color='#003366'>
         Find Your Next Adventure
-      </Typography>
+      </Typography>}
 
       <LocalizationProvider dateAdapter={AdapterMoment}>
         <Box
@@ -98,7 +98,7 @@ const SearchBar = ({ searchParams, setParams, onSearch, onReset }) => {
             Search
           </Button>
 
-          <Button
+          {displayCompactLayout ? <Button
             variant="outlined"
             color="primary"
             onClick={onReset}
@@ -116,7 +116,7 @@ const SearchBar = ({ searchParams, setParams, onSearch, onReset }) => {
             }}
           >
             Clear
-          </Button>
+          </Button> : null}
         </Box>
       </LocalizationProvider>
     </Box>
