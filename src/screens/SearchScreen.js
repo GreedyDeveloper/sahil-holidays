@@ -6,6 +6,7 @@ import PackageCard from 'components/PackageCard';
 import styled from '@emotion/styled';
 import { DataContext } from 'App';
 import moment from 'moment';
+import HeaderLogo from 'components/HeaderLogo';
 
 export const DestinationCard = styled(Card)(({ theme }) => ({
   borderRadius: 12,
@@ -87,6 +88,7 @@ const TravelHomePage = () => {
 
   return (
     <Box>
+      <HeaderLogo />
       {/* Hero Section */}
       <Box
         sx={{

@@ -1,6 +1,5 @@
 import React, { useEffect, createContext, useState } from 'react';
 import 'App.css';
-import HeaderLogo from 'components/HeaderLogo';
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import { muiTheme } from 'styles/theme';
@@ -49,7 +48,6 @@ function App() {
       <CssBaseline />
       <DataContext.Provider value={data}>
         <div className="App">
-          <HeaderLogo />
           <Navigator />
         </div>
       </DataContext.Provider>
