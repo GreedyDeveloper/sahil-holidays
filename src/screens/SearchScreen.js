@@ -131,14 +131,29 @@ const TravelHomePage = () => {
         </Container>
       </Box>
 
-      {packages ? <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', margin: '0 auto', marginTop: 2, width: {md: '70%'} }}>
+      {packages?.length > 0 ? <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', margin: '0 auto', marginTop: 2, width: { md: '70%' } }}>
         {packages.map((pkg) => (
           <PackageCard
             key={pkg.packageName}
             packageData={pkg}
           />
         ))}
-      </Box> : null}
+      </Box> : packages ? (
+        <Box
+          sx={{
+            textAlign: 'center',
+            mt: 6,
+            color: 'text.secondary',
+          }}
+        >
+          <Typography variant="h6" fontWeight="bold">
+            No packages found.
+          </Typography>
+          <Typography variant="body2">
+            Try adjusting your filters or check back later.
+          </Typography>
+        </Box>
+      ) : null}
 
       {/* Popular Destinations */}
       <Container sx={{ py: 6 }}>
