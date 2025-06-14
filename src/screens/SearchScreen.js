@@ -115,7 +115,7 @@ const TravelHomePage = () => {
           },
         }}
       >
-        <Typography variant="h3" fontWeight={700}>
+        <Typography variant='h3' fontWeight={700} sx={{ fontSize: { xs: '2.5rem', sm: '3rem' } }}>
           Discover Your Dream Destination
         </Typography>
         <Typography variant="h6" mb={4}>
@@ -131,7 +131,7 @@ const TravelHomePage = () => {
         </Container>
       </Box>
 
-      {packages ? <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', margin: '0 auto', marginTop: 2, width: '70%' }}>
+      {packages ? <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', margin: '0 auto', marginTop: 2, width: {md: '70%'} }}>
         {packages.map((pkg) => (
           <PackageCard
             key={pkg.packageName}
@@ -142,7 +142,7 @@ const TravelHomePage = () => {
 
       {/* Popular Destinations */}
       <Container sx={{ py: 6 }}>
-        <Typography variant="h4" fontWeight={600} textAlign="center" color='#003366' gutterBottom>
+        <Typography variant="h4" fontWeight={600} textAlign="center" color='#003366' sx={{ fontSize: { xs: '2rem', sm: '2.4rem' } }} gutterBottom>
           Popular Destinations
         </Typography>
 

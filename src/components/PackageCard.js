@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
     Card,
     CardContent,
@@ -9,7 +9,11 @@ import {
     Chip,
     Stack,
     Tooltip,
-    IconButton
+    IconButton,
+    Dialog,
+    DialogTitle,
+    DialogContent,
+    Button
 } from '@mui/material';
 import {
     AccessTime,
@@ -27,6 +31,7 @@ import {
 
 import { styled } from '@mui/material/styles';
 import { formatINR } from 'services/Utils';
+import { isDesktop } from 'styles/breakpoints';
 
 const GradientChip = styled(Chip)(({ theme }) => ({
     background: 'linear-gradient(to right, #43e97b, #38f9d7)',
@@ -61,6 +66,8 @@ const TravelPackageCard = ({ packageData }) => {
         sights,
         highlights
     } = packageData;
+
+    const [openSights, setOpenSights] = useState(false);
 
     const renderHighlights = (highlights) => {
         const isCompact = highlights.length < 4
@@ -99,45 +106,76 @@ const TravelPackageCard = ({ packageData }) => {
         );
     };
 
-    const renderSights = (sights) => (
-        <Box
-            sx={{
-                border: '1px solid #ccc',
-                borderRadius: 3,
-                padding: 2,
-                marginTop: 2,
-                position: 'relative',
-            }}
-        >
-            {/* Floating Label */}
-            <Typography
+    const renderSights = (sights) => {
+        if (isDesktop()) {
+            return <Box
                 sx={{
-                    position: 'absolute',
-                    top: 0,
-                    left: 16,
-                    transform: 'translateY(-50%)',
-                    backgroundColor: '#fff',
-                    px: 1,
-                    fontWeight: 'bold',
-                    fontSize: '0.875rem',
-                    color: 'text.primary',
+                    border: '1px solid #ccc',
+                    borderRadius: 3,
+                    padding: 2,
+                    marginTop: 2,
+                    position: 'relative',
                 }}
             >
-                Sights Covered
-            </Typography>
-            <Grid container spacing={1}>
-                {sights.map((sight, index) => (
-                    <Grid key={index}>
-                        <GradientChip
-                            icon={<Place sx={{ color: 'goldenrod' }} />}
-                            label={sight}
-                            color="black"
-                        />
-                    </Grid>
-                ))}
-            </Grid>
-        </Box>
-    );
+                {/* Floating Label */}
+                <Typography
+                    sx={{
+                        position: 'absolute',
+                        top: 0,
+                        left: 16,
+                        transform: 'translateY(-50%)',
+                        backgroundColor: '#fff',
+                        px: 1,
+                        fontWeight: 'bold',
+                        fontSize: '0.875rem',
+                        color: 'text.primary',
+                    }}
+                >
+                    Sights Covered
+                </Typography>
+                <Grid container spacing={1}>
+                    {sights.map((sight, index) => (
+                        <Grid key={index}>
+                            <GradientChip
+                                icon={<Place sx={{ color: 'goldenrod' }} />}
+                                label={sight}
+                                color="black"
+                            />
+                        </Grid>
+                    ))}
+                </Grid>
+            </Box>
+        } else {
+            return <Box sx={{ width: '100%' }}>
+                <Box display="flex" flexDirection="row" alignItems="center" justifyContent='space-between'>
+                    <Button
+                        startIcon={<Place />}
+                        variant="contained"
+                        onClick={() => setOpenSights(true)}
+                    >
+                        Sights
+                    </Button>
+                    {!isDesktop() && renderContactSection()}
+                </Box>
+                <Dialog open={openSights} onClose={() => setOpenSights(false)} fullWidth>
+                    <DialogTitle>Sights Covered</DialogTitle>
+                    <DialogContent>
+                        <Grid container spacing={1}>
+                            {sights.map((sight, index) => (
+                                <Grid key={index}>
+                                    <GradientChip
+                                        icon={<Place sx={{ color: 'goldenrod' }} />}
+                                        label={sight}
+                                        color="black"
+                                    />
+                                </Grid>
+                            ))}
+                        </Grid>
+                    </DialogContent>
+                </Dialog>
+            </Box>
+        }
+    };
 
     const renderDuration = (duration) => (
         <Chip
@@ -153,14 +191,14 @@ const TravelPackageCard = ({ packageData }) => {
         <Box
             sx={{
                 p: 2,
-                backgroundColor: '#fafafa',
+                backgroundColor: { xs: '#fff', md: '#fafafa' },
                 textAlign: 'center',
             }}
         >
-            <Typography variant="subtitle1" fontWeight="bold" sx={{ mb: 2 }}>
+            {isDesktop() && <Typography variant="subtitle1" fontWeight="bold" sx={{ mb: 2 }}>
                 Contact Us
-            </Typography>
-            <Stack direction="column" spacing={4} justifyContent="center">
+            </Typography>}
+            <Stack direction={{ xs: "row", md: "column" }} spacing={{ xs: 2, md: 4 }} justifyContent="center">
                 <Box sx={{ textAlign: 'center' }}>
                     <Tooltip title="Call Now On +91 98404 91037">
                         <a href="tel:+919840491037" style={{ textDecoration: 'none' }}>
@@ -179,9 +217,9 @@ const TravelPackageCard = ({ packageData }) => {
                             </IconButton>
                         </a>
                     </Tooltip>
-                    <Typography variant="caption" sx={{ mt: 1, display: 'block' }}>
+                    {isDesktop() && <Typography variant="caption" sx={{ mt: 1, display: 'block' }}>
                         Call
-                    </Typography>
+                    </Typography>}
                 </Box>
                 <Box sx={{ textAlign: 'center' }}>
                     <Tooltip title="Chat on WhatsApp">
@@ -206,17 +244,17 @@ const TravelPackageCard = ({ packageData }) => {
                             </IconButton>
                         </a>
                     </Tooltip>
-                    <Typography variant="caption" sx={{ mt: 1, display: 'block' }}>
+                    {isDesktop() && <Typography variant="caption" sx={{ mt: 1, display: 'block' }}>
                         WhatsApp
-                    </Typography>
+                    </Typography>}
                 </Box>
             </Stack>
         </Box>
     );
 
     return (
-        <Card sx={{ display: 'flex', flexDirection: 'row', marginBottom: 2, borderRadius: 2 }}>
-            <Box sx={{ position: 'relative', width: 300 }}>
+        <Card sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, m: 1.5, borderRadius: 2 }}>
+            <Box sx={{ position: 'relative', width: { xs: '100%', md: 300 } }}>
                 <Box overflow='hidden' width='100%' height='100%'>
                     <CardMedia
                         component="img"
@@ -284,7 +322,7 @@ const TravelPackageCard = ({ packageData }) => {
                 {renderHighlights(highlights)}
                 {renderSights(sights)}
             </CardContent>
-            {renderContactSection()}
+            {isDesktop() && renderContactSection()}
         </Card >
     );
 };
