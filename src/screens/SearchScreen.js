@@ -1,14 +1,10 @@
 import React, { useContext, useState } from 'react';
-import { Box, Typography, Container, Grid, Card, CardMedia, CardContent } from '@mui/material';
-import SearchBar from 'components/SearchBar'; // Assuming you have the fancy version
-import logo from 'assets/logo.png';
+import { Box, Typography, Container, Card, CardMedia } from '@mui/material';
+import SearchBar from 'components/SearchBar';
 import backgroundImage from 'assets/background.jpg';
 import PackageCard from 'components/PackageCard';
-import SearchBarComponent from 'components/SearchBar';
 import styled from '@emotion/styled';
-import { theme } from 'styles/theme';
 import { DataContext } from 'App';
-import Package from 'components/Package';
 import moment from 'moment';
 
 export const DestinationCard = styled(Card)(({ theme }) => ({
