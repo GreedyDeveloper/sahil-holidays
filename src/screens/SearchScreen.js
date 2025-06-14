@@ -51,8 +51,6 @@ const TravelHomePage = () => {
   const [packages, setPackages] = React.useState(null);
 
   const handleSearch = (params = searchParams) => {
-    console.log('Search Params:', params);
-
     const filteredPackages = packageData.filter(pkg =>
       pkg.destination.toLowerCase().includes(params.destination.toLowerCase())
     ).filter(pkg => {
@@ -66,6 +64,11 @@ const TravelHomePage = () => {
       }
       return false;
     });
+
+    if (filteredPackages.length !== 0) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
     setPackages(filteredPackages);
   };
 
@@ -88,52 +91,53 @@ const TravelHomePage = () => {
 
   return (
     <Box>
-      <HeaderLogo />
-      {/* Hero Section */}
-      <Box
-        sx={{
-          backgroundImage: `url(${backgroundImage})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          padding: '125px 20px',
-          textAlign: 'center',
-          color: '#fff',
-          position: 'relative',
-          zIndex: 1,
-          '&::before': {
-            content: '""',
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%',
-            background:
-              'linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6))',
-            zIndex: -1,
-          },
-        }}
-      >
-        {!!!packages?.length && <><Typography variant='h3' fontWeight={700} sx={{ fontSize: { xs: '2.5rem', sm: '3rem' } }}>
-          Discover Your Dream Destination
-        </Typography>
-          <Typography variant="h6" mb={4}>
-            Best travel packages, handpicked with love ❤️
-          </Typography></>}
-        <Container
-          sx={{ width: !!packages?.length ? '100%' : 'auto' }}
-          maxWidth={!!packages?.length ? false : 'md'}
+      <Box sx={{ position: !!packages?.length > 0 ? 'fixed' : 'relative', top: 0, left: 0, width: '100%', zIndex: 10 }}>
+        <HeaderLogo />
+        {/* Hero Section */}
+        <Box
+          sx={{
+            backgroundImage: `url(${backgroundImage})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            padding: !!packages?.length > 0 ? '75px 0 10px' : '125px 20px',
+            textAlign: 'center',
+            color: '#fff',
+            position: 'relative',
+            zIndex: 1,
+            '&::before': {
+              content: '""',
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100%',
+              background:
+                'linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6))',
+              zIndex: -1,
+            },
+          }}
         >
-          <SearchBar
-            searchParams={searchParams}
-            setParams={setSearchParams}
-            onSearch={() => handleSearch()}
-            onReset={handleReset}
-            displayCompactLayout={packages && packages.length > 0}
-          />
-        </Container>
+          {!!!packages?.length && <><Typography variant='h3' fontWeight={700} sx={{ fontSize: { xs: '2.5rem', sm: '3rem' } }}>
+            Discover Your Dream Destination
+          </Typography>
+            <Typography variant="h6" mb={4}>
+              Best travel packages, handpicked with love ❤️
+            </Typography></>}
+          <Container
+            sx={{ maxWidth: { xs: '100%', md: 'md' } }}
+          >
+            <SearchBar
+              searchParams={searchParams}
+              setParams={setSearchParams}
+              onSearch={() => handleSearch()}
+              onReset={handleReset}
+              displayCompactLayout={!!packages?.length > 0}
+            />
+          </Container>
+        </Box>
       </Box>
 
-      {packages?.length > 0 ? <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', margin: '0 auto', marginTop: 2, width: { md: '70%' } }}>
+      {packages?.length > 0 ? <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', margin: '0 auto', marginTop: { xs: '250px', md: '170px' }, width: { md: '70%' } }}>
         {packages.map((pkg) => (
           <PackageCard
             key={pkg.packageName}
