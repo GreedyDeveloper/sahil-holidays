@@ -45,7 +45,11 @@ const SearchBar = ({ searchParams, setParams, onSearch, onReset }) => {
               label="Departure Date"
               value={searchParams.departureDate}
               onChange={(newDate) => setSearchParams({ departureDate: newDate })}
-              renderInput={(params) => <TextField {...params} fullWidth />}
+              slotProps={{
+                textField: {
+                  fullWidth: true,
+                },
+              }}
             />
           </Box>
           <Box sx={{ flex: '1 1 30%' }}>
