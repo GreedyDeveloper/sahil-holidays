@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Formik, Form, FieldArray } from 'formik';
 import * as Yup from 'yup';
 import {
@@ -14,6 +14,7 @@ import {
   FormControl,
   InputAdornment,
 } from '@mui/material';
+import {Visibility, VisibilityOff} from '@mui/icons-material';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterMoment } from '@mui/x-date-pickers/AdapterMoment';
@@ -76,6 +77,10 @@ const validationSchema = Yup.object({
       })
     )
     .min(1, 'At least one highlight is required'),
+    password: Yup.string()
+        .min(8, 'Password must be at least 8 characters')
+        .max(20, 'Password cannot exceed 20 characters')
+        .required('Password is required'),
 });
 
 const iconOptions = [
@@ -113,9 +118,10 @@ const initialValues = {
 };
 
 const TravelPackageForm = () => {
+  const [showPassword, setShowPassword] = useState(false);
   const handleSubmit = async (values) => {
     try {
-      const uploadResult = await uploadImage(values.image)
+      const uploadResult = await uploadImage(values.image, values.password);
       if (!uploadResult.success) {
         throw new Error(uploadResult.message || 'Image upload failed');
       }
@@ -355,6 +361,32 @@ const TravelPackageForm = () => {
                       </Box>
                     )}
                   </FieldArray>
+
+                  <TextField
+                    name="password"
+                    label="Password"
+                    placeholder='Enter Password to submit review'
+                    type={showPassword ? "text" : "password"}
+                    value={values.password}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    inputProps={{ maxLength: 20 }}
+                    error={Boolean(touched.password && errors.password)}
+                    helperText={touched.password && errors.password}
+                    fullWidth
+                    InputProps={{
+                      endAdornment: (
+                        <InputAdornment position="end">
+                          <IconButton
+                            onClick={() => setShowPassword((show) => !show)}
+                            edge="end"
+                          >
+                            {showPassword ? <VisibilityOff /> : <Visibility />}
+                          </IconButton>
+                        </InputAdornment>
+                      ),
+                    }}
+                  />
                 </Box>
               </Paper>
 

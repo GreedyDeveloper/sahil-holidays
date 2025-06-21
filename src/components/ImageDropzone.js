@@ -2,7 +2,7 @@ import React, { useCallback } from 'react';
 import { useDropzone } from 'react-dropzone';
 import { Box, Typography } from '@mui/material';
 
-const ImageDropzone = ({ value, onChange }) => {
+const ImageDropzone = ({ value, onChange, label = "Cover Image" }) => {
     const onDrop = useCallback(
         (acceptedFiles) => {
             if (acceptedFiles && acceptedFiles.length > 0) {
@@ -45,7 +45,7 @@ const ImageDropzone = ({ value, onChange }) => {
             ) : (
                 <>
                     <Typography variant="h6" color="textPrimary" gutterBottom>
-                        Cover Image
+                        {label}
                     </Typography>
                     <Typography variant="body2" color="textSecondary">
                         Drag & drop an image here, or click to select file

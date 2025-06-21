@@ -1,5 +1,6 @@
 import React from 'react';
 import { Routes, Route, HashRouter } from 'react-router-dom';
+import CustomerReviewForm from 'screens/CustomerReviewForm';
 import HomeScreen from 'screens/HomeScreen';
 import ItineraryPage from 'screens/ItineraryScreen';
 import SearchScreen from 'screens/SearchScreen';
@@ -13,6 +14,7 @@ function Navigator() {
         <Route path="/search" element={<SearchScreen />} />
         <Route path="/itinerary" element={<ItineraryPage />} />
         <Route path="/planner" element={<TravelPlannerForm />} />
+        <Route path="/review" element={<CustomerReviewForm />} />
       </Routes>
     </HashRouter>
   );

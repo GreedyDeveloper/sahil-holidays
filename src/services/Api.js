@@ -29,6 +29,22 @@ export const addItem = async (newItem) => {
   }
 };
 
+export const addReview = async (newItem) => {
+  try {
+    const response = await fetch(`${BASE_URL}/create_review.php`, {
+      method: 'POST',
+      body: JSON.stringify(newItem),
+    });
+    if (!response.ok) {
+      throw new Error('Failed to add item');
+    }
+    return await response.json();
+  } catch (error) {
+    console.error('Error adding item:', error);
+    throw error;
+  }
+};
+
 export const updateItem = async (updatedItem) => {
   try {
     const response = await fetch(`${BASE_URL}/update_package.php`, {
@@ -48,9 +64,10 @@ export const updateItem = async (updatedItem) => {
   }
 };
 
-export const uploadImage = async (file) => {
+export const uploadImage = async (file, password) => {
     const formData = new FormData();
     formData.append('image', file);
+    formData.append('password', password);
   
     try {
       const response = await fetch(`${BASE_URL}/upload_image.php`, {
