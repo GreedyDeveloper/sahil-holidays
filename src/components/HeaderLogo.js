@@ -24,9 +24,13 @@ const HeaderContainer = styled.header`
 `;
 
 const LogoImage = styled.img`
-  height: 50px;
+  height: 75px;
   width: auto;
   object-fit: contain;
+
+  @media (max-width: 600px) {
+     height: 50px
+  }
 `;
 
 const LogoText = styled.span`
