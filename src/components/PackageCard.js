@@ -178,13 +178,18 @@ const TravelPackageCard = ({ packageData }) => {
     };
 
     const renderDuration = (duration) => (
-        <Chip
-            icon={<AccessTime />}
-            label={`${duration.days} Days / ${duration.nights} Nights`}
-            color="secondary"
-            variant="filled"
-            sx={{ marginBottom: 2, fontWeight: 'bold', fontSize: '0.875rem' }}
-        />
+        <Box
+            sx={{
+                position: 'absolute',
+                top: 0,
+                right: 0,
+                padding: '8px',
+            }}
+        >
+            <DurationBox>
+                <AccessTime sx={{ fontSize: 16 }} /> {duration.days} Days / {duration.nights} Nights
+            </DurationBox>
+        </Box>
     );
 
     const renderContactSection = () => (
@@ -302,18 +307,7 @@ const TravelPackageCard = ({ packageData }) => {
                         {formatINR(price)} per couple
                     </Typography>
                 </Box>
-                <Box
-                    sx={{
-                        position: 'absolute',
-                        top: 0,
-                        right: 0,
-                        padding: '8px',
-                    }}
-                >
-                    <DurationBox>
-                        <AccessTime sx={{ fontSize: 16 }} /> 7 Days / 6 Nights
-                    </DurationBox>
-                </Box>
+                {renderDuration(duration)}
             </Box>
 
             {/* Content on the right */}
